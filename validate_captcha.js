@@ -24,8 +24,8 @@ window.onload = function() {
 
 // Evento ao enviar o formulário do hCaptcha
 document.getElementById('captcha-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
+    e.preventDefault(); // Previne o envio do formulário
+
     var captchaResponse = hcaptcha.getResponse();
     
     if (captchaResponse.length === 0) {
