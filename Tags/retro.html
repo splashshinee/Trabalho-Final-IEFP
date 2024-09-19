@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nintendo</title>
+    <style>
+        /* Estilos base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4ff;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        header {
+            background-color: #005f99;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header h1 img {
+            width: 24px;
+            height: 24px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #007acc;
+            transition: background-color 0.5s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.5s ease;
+        }
+
+        nav a img {
+            width: 18px;
+            height: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            flex-grow: 1;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .news-item {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: scale(1.02);
+            background-color: #004080;
+        }
+
+        .news-item:hover .news-content p {
+            color: #e0e0e0;
+        }
+
+        .news-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .news-content {
+            padding: 15px;
+        }
+
+        .news-content h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+
+        .news-content p {
+            margin: 0 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .news-tags {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #007acc;
+        }
+
+        .news-tags a {
+            color: #007acc;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .news-tags a:hover {
+            text-decoration: underline;
+            color: #005f99;
+        }
+
+        .theme-toggle {
+            background-color: #005f99;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px; /* Fixado no topo */
+            right: 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle img {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Tema escuro */
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-theme header {
+            background-color: #333;
+        }
+
+        body.dark-theme nav {
+            background-color: #444;
+        }
+
+        body.dark-theme nav a {
+            color: #ddd;
+        }
+
+        body.dark-theme .news-item {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        body.dark-theme .theme-toggle {
+            background-color: #444;
+        }
+
+        body.dark-theme .news-tags a {
+            color: #bbb;
+        }
+
+        body.dark-theme .news-item:hover {
+            background-color: #002b5c;
+        }
+
+        footer {
+            background-color: #005f99;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="..\Imagens/Site Logo.svg" alt="Ícone do site">
+            Respawn News
+        </h1>
+    </header>
+    <nav>
+        <!-- Botão Home -->
+        <a href="..\index.html">
+            <img src="..\Imagens\Home icon.png" alt="Home">
+            Home
+        </a>
+        <a href="playstation.html">
+            <img src="..\Imagens/Playstation Icon.png" alt="PlayStation">
+            PlayStation
+        </a>
+        <a href="xbox.html">
+            <img src="..\Imagens\xbox icon.png" alt="Xbox">
+            Xbox
+        </a>
+        <a href="nintendo.html">
+            <img src="..\Imagens\nintendo switch icon.png" alt="Nintendo">
+            Nintendo
+        </a>
+        <a href="pc.html">
+            <img src="..\Imagens\PC icon.png" alt="PC">
+            PC
+        </a>
+        <a href="mobile.html">
+            <img src="..\Imagens\Mobile icon.png" alt="Mobile">
+            Mobile
+        </a>
+        <a href="retro.html">
+            <img src="..\Imagens\Retro icon.png" alt="Retro">
+            Retro
+        </a>
+    </nav>
+
+    <div class="container">
+        <div class="news-grid">
+            <div class="news-item">
+                <a href="Noticias\Noticia_6.html">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a75c9651-dbdb-4c64-9d30-871861997e97/dexmvkl-75021eba-6a07-4e6e-9a5e-ff1d61618609.png/v1/fill/w_1280,h_915,q_80,strp/game_over_with_mario_1_3__by_thegreenbeetle_dexmvkl-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTE1IiwicGF0aCI6IlwvZlwvYTc1Yzk2NTEtZGJkYi00YzY0LTlkMzAtODcxODYxOTk3ZTk3XC9kZXhtdmtsLTc1MDIxZWJhLTZhMDctNGU2ZS05YTVlLWZmMWQ2MTYxODYwOS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.bZ4S35qOeyXmrWMXi4898qt2src-XfZ-r1D-U0AxWDE" alt="Notícia 6">
+                    <div class="news-content">
+                        <h2>Polícia italiana acaba com mafia de jogos retrô falsificados avaliado em £ 42 milhões</h2>
+                        <p>Autoridades apreenderam mais de 12.000 consoles Nintendo, Sega e Atari falsos.</p>
+                        <div class="news-tags">
+                            <a href="Tags/retro.html">Retro</a>
+                            <a href="#">Clássico</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <img src="..\Imagens/Mudar Tema icon.png" alt="Mudar Tema">
+        Mudar Tema
+    </button>
+
+    <footer>
+        <p>Feito por João Carvalho ~ 2024</p>
+    </footer>
+
+    <script>
+        // Função para alternar tema e salvar no localStorage
+        function toggleTheme() {
+            const isDarkTheme = document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+        }
+
+        // Aplicar tema com base no localStorage
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        };
+    </script>
+</body>
+</html>

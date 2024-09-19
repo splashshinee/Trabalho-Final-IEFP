@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Term.ooo, Letreco e mais: conheça as versões em português do Wordle - Respawn News</title>
+    <style>
+        /* Estilos base do site */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4ff;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        header {
+            background-color: #005f99;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header h1 img {
+            width: 24px;
+            height: 24px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #007acc;
+            transition: background-color 0.5s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.5s ease;
+        }
+
+        nav a img {
+            width: 18px;
+            height: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            flex-grow: 1;
+        }
+
+        .news-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .news-header img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .news-title {
+            font-size: 2.5em;
+            margin: 20px 0 10px;
+        }
+
+        .news-subtitle {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .news-tags {
+            font-size: 1em;
+            color: #007acc;
+            margin-bottom: 20px;
+        }
+
+        .news-tags a {
+            color: #007acc;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .news-tags a:hover {
+            text-decoration: underline;
+            color: #005f99;
+        }
+
+        .news-content {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            color: #333;
+        }
+
+        /* Ajuste de cor no modo escuro */
+        body.dark-theme .news-content {
+            color: #ffffff;
+        }
+
+        footer {
+            background-color: #005f99;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Botão para mudar o tema */
+        .theme-toggle {
+            background-color: #005f99;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px; /* Fixado no topo */
+            right: 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle img {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Tema escuro */
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-theme header {
+            background-color: #333;
+        }
+
+        body.dark-theme nav {
+            background-color: #444;
+        }
+
+        body.dark-theme nav a {
+            color: #ddd;
+        }
+
+        body.dark-theme footer {
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="..\Imagens/Site Logo.svg" alt="Ícone do site">
+            Respawn News
+        </h1>
+    </header>
+
+    <nav>
+        <!-- Botão Home -->
+        <a href="..\index.html">
+            <img src="..\Imagens/Home icon.png" alt="Home">
+            Home
+        </a>
+        <a href="..\Tags\playstation.html">
+            <img src="..\Imagens\Playstation Icon.png" alt="PlayStation">
+            PlayStation
+        </a>
+        <a href="..\Tags/xbox.html">
+            <img src="..\Imagens/xbox icon.png" alt="Xbox">
+            Xbox
+        </a>
+        <a href="..\Tags/nintendo.html">
+            <img src="..\Imagens/nintendo switch icon.png" alt="Nintendo">
+            Nintendo
+        </a>
+        <a href="..\Tags/pc.html">
+            <img src="..\Imagens/PC icon.png" alt="PC">
+            PC
+        </a>
+        <a href="..\Tags/mobile.html">
+            <img src="..\Imagens/Mobile icon.png" alt="Mobile">
+            Mobile
+        </a>
+        <a href="..\Tags/retro.html">
+            <img src="..\Imagens/Retro icon.png" alt="Retro">
+            Retro
+        </a>
+    </nav>
+    <div class="container">
+        <div class="news-header">
+            <!-- Imagem relacionada à notícia (deixe em branco para preencher posteriormente) -->
+            <img src="https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2022/02/RNSA5GURTBHGJK4B6PXRIPRGOM.webp" alt="Imagem da Notícia">
+            
+            <!-- Título da Notícia (deixe em branco para preencher posteriormente) -->
+            <h1 class="news-title">Term.ooo, Letreco e mais: conheça as versões em português do Wordle</h1>
+
+            <!-- Subtítulo da Notícia (deixe em branco para preencher posteriormente) -->
+            <h2 class="news-subtitle">Existem pelo menos quatro versões do game em português brasileiro que valem a pena conferir. Veja a lista</h2>
+
+            <!-- Tags da Notícia (deixe em branco ou preencha posteriormente) -->
+            <div class="news-tags">
+                <a href="..\Tags/mobile.html">Mobile</a>
+                <a href="#">Puzzle</a>
+            </div>
+        </div>
+
+        <!-- Corpo da Notícia (deixe em branco para preencher posteriormente) -->
+        <div class="news-content">
+            <p>As tradicionais palavras cruzadas ganharam um sucessor de respeito: o Wordle, jogo digital de palavras criado durante a pandemia, acumulou 3 milhões de usuários em 90 dias — e, agora, foi comprado pelo jornal The New York Times. O problema é que o game é todo em inglês, e para mandar bem, é importante ter um certo vocabulário na ponta da língua.</p>
+            
+            <p>A boa notícia é que o sucesso do Wordle inspirou a criação de uma série de jogos bem semelhantes — feitos, inclusive, em português do Brasil. A essa altura, é possível que você já tenha trombado com um deles em suas redes sociais, é verdade. Mas o fato é que existem pelo menos quatro versões brasileiras do game que valem a pena conferir. Veja a lista.</p>
+            
+            <h3>1 – Term.ooo</h3>
+            <p>É o mais parecido com o jogo americano — e também a versão mais popular do Wordle em português.</p>
+            <p>Quando as letras aparecem na cor verde, além de existirem na palavra do dia, elas estão na posição correta. As amarelas sinalizam que a letra em questão existe na frase, porém, está na posição errada. Já as que aparecem pretas, significa que não fazem parte da palavra.</p>
+
+            <h3>2 – Charada</h3>
+            <p>Assim como o Term.ooo, o joguinho também está disponível gratuitamente apenas em versão web. O game não muda muito em relação ao anterior. O que o difere dos outros é dificuldade: a dinâmica é considerada fácil do início ao fim. Ou seja, nada de palavras estranhas de início — algo ideal para quem está começando.</p>
+
+            <h3>3 – Letreco</h3>
+            <p>O Letreco replica o Wordle original em quase todos os quesitos — com a diferença de indicar as letras erradas em vermelho. A versão do jogo ganhou notoriedade após ser jogada pelo streamer Casimiro. Ela também está disponível na versão web e é gratuita.</p>
+
+            <h3>4 – Palavra do dia</h3>
+            <p>Testou as versões anteriores e achou todas muito simples? Esta aqui é pra você. O Palavra do dia funciona de forma bem semelhante aos concorrentes, mas traz uma peculiaridade: nele é possessível jogar níveis mais difíceis. O game também está disponível apenas em versão web e é grátis.</p>
+        </div>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <img src="..\Imagens/Mudar Tema icon.png" alt="Mudar Tema">
+        Mudar Tema
+    </button>
+
+    <footer>
+        <p>Feito por João Carvalho ~ 2024</p>
+    </footer>
+
+    <script>
+        // Função para alternar tema e salvar no localStorage
+        function toggleTheme() {
+            const isDarkTheme = document.body.classList.toggle('dark-theme');
+            localStorage.setItem('theme', isDarkTheme ? 'dark' : 'light');
+        }
+
+        // Aplicar tema com base no localStorage
+        window.onload = function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-theme');
+            }
+        };
+    </script>
+</body>
+</html>
