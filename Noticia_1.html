@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícia 1 - Respawn News</title>
+    <style>
+        /* Estilos base do site */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4ff;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        header {
+            background-color: #005f99;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header h1 img {
+            width: 24px;
+            height: 24px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #007acc;
+            transition: background-color 0.5s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.5s ease;
+        }
+
+        nav a img {
+            width: 18px;
+            height: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            flex-grow: 1;
+        }
+
+        .news-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .news-header img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .news-title {
+            font-size: 2.5em;
+            margin: 20px 0 10px;
+        }
+
+        .news-subtitle {
+            font-size: 1.5em;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .news-tags {
+            font-size: 1em;
+            color: #007acc;
+            margin-bottom: 20px;
+        }
+
+        .news-tags a {
+            color: #007acc;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .news-tags a:hover {
+            text-decoration: underline;
+            color: #005f99;
+        }
+
+        .news-content {
+            font-size: 1.2em;
+            line-height: 1.8em;
+            color: #333;
+        }
+
+        .comment-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+        }
+
+        .comment-section h3 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #005f99;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+
+        /* Botão para mudar o tema */
+        .theme-toggle {
+            background-color: #005f99;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle img {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Tema escuro */
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-theme header {
+            background-color: #333;
+        }
+
+        body.dark-theme nav {
+            background-color: #444;
+        }
+
+        body.dark-theme nav a {
+            color: #ddd;
+        }
+
+        body.dark-theme footer {
+            background-color: #333;
+        }
+
+        body.dark-theme .comment-section {
+            background-color: #333;
+            border-color: #555;
+            color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="Imagens/Site Logo.svg" alt="Ícone do site">
+            Respawn News
+        </h1>
+    </header>
+
+    <nav>
+        <!-- Botão Home -->
+        <a href="home.html">
+            <img src="Imagens/Home icon.png" alt="Home">
+            Home
+        </a>
+        <a href="#">
+            <img src="Imagens/Playstation Icon.png" alt="PlayStation">
+            PlayStation
+        </a>
+        <a href="#">
+            <img src="Imagens/xbox icon.png" alt="Xbox">
+            Xbox
+        </a>
+        <a href="#">
+            <img src="Imagens/nintendo switch icon.png" alt="Nintendo">
+            Nintendo
+        </a>
+        <a href="#">
+            <img src="Imagens/PC icon.png" alt="PC">
+            PC
+        </a>
+        <a href="#">
+            <img src="Imagens/Mobile icon.png" alt="Mobile">
+            Mobile
+        </a>
+        <a href="#">
+            <img src="Imagens/Retro icon.png" alt="Retro">
+            Retro
+        </a>
+    </nav>
+
+    <div class="container">
+        <div class="news-header">
+            <!-- Imagem relacionada à notícia -->
+            <img src="https://www.gematsu.com/wp-content/uploads/2024/09/Freedom-Wars-Remastered-Ann_09-17-24_Top.jpg" alt="Imagem da Notícia 1">
+            
+            <!-- Título da Notícia -->
+            <h1 class="news-title">Jogo de ação da PlayStation Vita vai chegar ao PC, PS4, PS5 e Switch</h1>
+
+            <!-- Subtítulo da Notícia -->
+            <h2 class="news-subtitle">Freedom Wars Remastered.</h2>
+
+            <!-- Tags da Notícia -->
+            <div class="news-tags">
+                <a href="#">PlayStation</a>
+                <a href="#">Ação</a>
+            </div>
+        </div>
+
+        <!-- Corpo da Notícia -->
+        <div class="news-content">
+            <p>A Bandai Namco anunciou Freedom Wars Remastered, uma remasterização do RPG de ação desenvolvido pelo estúdio Dimps (responsáveis por Dragon Ball Xenoverse) e publicado em 2014 pela Sony para a PlayStation Vita.</p>
+
+            <p>De acordo com o Gematsu, o jogo será lançado para a PlayStation 5, PlayStation 4, Nintendo Switch e PC via Steam a 9 de janeiro de 2025 no Japão e a 10 de janeiro em todo o mundo.</p>
+
+            <p>Freedom Wars Remastered traz ainda melhorias óbvias como resolução 4K, texturas atualizadas e desempenho de 60 fotogramas por segundo na PlayStation e PC. Para além disso, os jogadores poderão contar com um sistema de criação de armas revisto e novas configurações de dificuldade.</p>
+        
+            <p>O jogo também possui batalhas cooperativas onde grupos de até 7 jogadores devem resgatar cidadãos e derrotar Abductors enormes em missões rápidas e cheias de ação.</p>
+
+            <p>"Pelo crime de existires, a tua sentença de 1.000.000 de anos começa hoje. Num futuro distópico, com o mundo devastado pela poluição e os recursos naturais esgotados, a humanidade vive em complexos prisionais extensos chamados Panopticons. Qualquer um que nasça neste cenário infernal é considerado "Sinner". Os jogadores buscam a sua liberdade voluntariando-se para operações de combate extremamente perigosas para competir com outros Panopticons pelo que resta dos recursos cada vez menores do planeta.", diz a sinopse do jogo.</p>
+        
+            <p>Confere o trailer de Freedom Wars Remastered abaixo.</p>
+
+            <iframe width="853" height="480" src="https://www.youtube.com/embed/feD7epA4CBk" title="FREEDOM WARS REMASTERED — Announcement Trailer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+
+        <!-- Seção de Comentários -->
+        <div class="comment-section">
+            <h3>Seção de Comentários</h3>
+            <p>Aqui será o espaço para usuários deixarem comentários sobre a notícia.</p>
+        </div>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <img src="Imagens/Mudar Tema icon.png" alt="Mudar Tema">
+        Mudar Tema
+    </button>
+
+    <footer>
+        <p>Feito por João Carvalho ~ 2024</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respawn News</title>
+    <style>
+        /* Estilos base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4ff;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        header {
+            background-color: #005f99;
+            color: white;
+            padding: 15px 0;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.5s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        header h1 img {
+            width: 24px;
+            height: 24px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background-color: #007acc;
+            transition: background-color 0.5s ease;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.5s ease;
+        }
+
+        nav a img {
+            width: 18px;
+            height: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+            flex-grow: 1;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .news-item {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, background-color 0.3s ease;
+        }
+
+        .news-item:hover {
+            transform: scale(1.02);
+            background-color: #004080;
+        }
+
+        .news-item:hover .news-content p {
+            color: #e0e0e0;
+        }
+
+        .news-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .news-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .news-content {
+            padding: 15px;
+        }
+
+        .news-content h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+        }
+
+        .news-content p {
+            margin: 0 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .news-tags {
+            margin-top: 10px;
+            font-size: 0.9em;
+            color: #007acc;
+        }
+
+        .news-tags a {
+            color: #007acc;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .news-tags a:hover {
+            text-decoration: underline;
+            color: #005f99;
+        }
+
+        .theme-toggle {
+            background-color: #005f99;
+            border: none;
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .theme-toggle img {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Tema escuro */
+        body.dark-theme {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-theme header {
+            background-color: #333;
+        }
+
+        body.dark-theme nav {
+            background-color: #444;
+        }
+
+        body.dark-theme nav a {
+            color: #ddd;
+        }
+
+        body.dark-theme .news-item {
+            background-color: #333;
+            color: #f0f0f0;
+        }
+
+        body.dark-theme .theme-toggle {
+            background-color: #444;
+        }
+
+        body.dark-theme .news-tags a {
+            color: #bbb;
+        }
+
+        body.dark-theme .news-item:hover {
+            background-color: #002b5c;
+        }
+
+        footer {
+            background-color: #005f99;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>
+            <img src="Imagens\Site Logo.svg" alt="Ícone do site">
+            Respawn News
+        </h1>
+    </header>
+
+    <nav>
+        <!-- Botão Home -->
+        <a href="home.html">
+            <img src="Imagens\Home icon.png" alt="Home">
+            Home
+        </a>
+        <a href="#">
+            <img src="Imagens\xbox icon.png" alt="Xbox">
+            Xbox
+        </a>
+        <a href="#">
+            <img src="Imagens\nintendo switch icon.png" alt="Nintendo">
+            Nintendo
+        </a>
+        <a href="#">
+            <img src="Imagens\PC icon.png" alt="PC">
+            PC
+        </a>
+        <a href="#">
+            <img src="Imagens\Mobile icon.png" alt="Mobile">
+            Mobile
+        </a>
+        <a href="#">
+            <img src="Imagens\Retro icon.png" alt="Retro">
+            Retro
+        </a>
+    </nav>
+
+    <div class="container">
+        <div class="news-grid">
+            <!-- 15 Caixas de notícias -->
+            <div class="news-item">
+                <a href="Noticia_1.html">
+                    <img src="https://www.gematsu.com/wp-content/uploads/2024/09/Freedom-Wars-Remastered-Ann_09-17-24_Top.jpg" alt="Notícia 1">
+                    <div class="news-content">
+                        <h2>Jogo de ação da PlayStation Vita vai chegar ao PC, PS4, PS5 e Switch</h2>
+                        <p>Freedom Wars Remastered.</p>
+                        <div class="news-tags">
+                            <a href="#">PlayStation</a>
+                            <a href="#">Ação</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/2677660/capsule_616x353.jpg?t=1725017792" alt="Notícia 2">
+                    <div class="news-content">
+                        <h2>Nova aventura de Indiana Jones já tem data de lançamento na Xbox</h2>
+                        <p>Foi durante a abertura do Gamescom que a Microsoft revelou não só o novo trailer de Indiana Jones, mas também a sua data de lançamento.</p>
+                        <div class="news-tags">
+                            <a href="#">Xbox</a>
+                            <a href="#">Aventura</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjahqsYiMdFZK4qmaOxSlUgrBFd8wVAn9Lj2YndaZTsG1qRGpTgD9HFGNZxVpkTkItnOE9DHC2rk9oLkHQZ7IVBjH-Y6ypn6259TrLRQFniCmlU6h0J625qnWd0zWl7X8CWLL84MMyCHrrhAv6ybuczikzN47AqTq6EBGejuxEIjE_J7dbb2tIyAgN7ia6K/w640-h360-rw/mario-luigi-brothership-acao.jpg" alt="Notícia 3">
+                    <div class="news-content">
+                        <h2>Mario & Luigi: Brothership recebe novo trailer de gameplay</h2>
+                        <p>RPG chega ao Switch no dia 7 de novembro.</p>
+                        <div class="news-tags">
+                            <a href="#">Nintendo</a>
+                            <a href="#">RPG</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://s2-techtudo.glbimg.com/lgd4VVMN82QAsGV6UMqKqnQsbik=/0x0:3840x2160/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2023/D/I/3WHyWnSHqE0d4nFcIXtg/gt7-in-game-image-5.png" alt="Notícia 4">
+                    <div class="news-content">
+                        <h2>11 jogos de corrida mais realistas que você pode baixar em 2024</h2>
+                        <p>Conheça jogos de corrida que são focados na simulação, ou não, e trazem os melhores gráficos para conferir em 2024</p>
+                        <div class="news-tags">
+                            <a href="#">Corrida</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://gizmodo.uol.com.br/wp-content/blogs.dir/8/files/2022/02/RNSA5GURTBHGJK4B6PXRIPRGOM.webp" alt="Notícia 5">
+                    <div class="news-content">
+                        <h2>Term.ooo, Letreco e mais: conheça as versões em português do Wordle</h2>
+                        <p>Existem pelo menos quatro versões do game em português brasileiro que valem a pena conferir. Veja a lista</p>
+                        <div class="news-tags">
+                            <a href="#">Mobile</a>
+                            <a href="#">Puzzle</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a75c9651-dbdb-4c64-9d30-871861997e97/dexmvkl-75021eba-6a07-4e6e-9a5e-ff1d61618609.png/v1/fill/w_1280,h_915,q_80,strp/game_over_with_mario_1_3__by_thegreenbeetle_dexmvkl-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9OTE1IiwicGF0aCI6IlwvZlwvYTc1Yzk2NTEtZGJkYi00YzY0LTlkMzAtODcxODYxOTk3ZTk3XC9kZXhtdmtsLTc1MDIxZWJhLTZhMDctNGU2ZS05YTVlLWZmMWQ2MTYxODYwOS5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.bZ4S35qOeyXmrWMXi4898qt2src-XfZ-r1D-U0AxWDE" alt="Notícia 6">
+                    <div class="news-content">
+                        <h2>Polícia italiana acaba com mafia de jogos retrô falsificados avaliado em £ 42 milhões</h2>
+                        <p>Autoridades apreenderam mais de 12.000 consoles Nintendo, Sega e Atari falsos.</p>
+                        <div class="news-tags">
+                            <a href="#">Retro</a>
+                            <a href="#">Clássico</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://assetsio.gnwcdn.com/concord-lojas.png?width=690&quality=75&format=jpg&auto=webp" alt="Notícia 7">
+                    <div class="news-content">
+                        <h2>Concord ainda à venda em lojas físicas de Portugal</h2>
+                        <p>Uma situação deveras cómica.</p>
+                        <div class="news-tags">
+                            <a href="#">PlayStation</a>
+                            <a href="#">FPS</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://images.gog-statics.com/e18d02459d3fec22e86bd94e0c1e383b8232e94b47fe1924d59a733ac98ab66a_product_card_v2_mobile_slider_639.jpg" alt="Notícia 8">
+                    <div class="news-content">
+                        <h2>Fãs de estratégia vão gostar dos novos jogos de setembro do Xbox Game Pass</h2>
+                        <p>Ara: History Untold, Frostpunk 2 e mais um.</p>
+                        <div class="news-tags">
+                            <a href="#">Xbox</a>
+                            <a href="#">Estratégia</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://i.ytimg.com/vi/Mq612yoPg6c/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBCKRybQAMJyqH8AQWtt6peH4wRbg" alt="Notícia 9">
+                    <div class="news-content">
+                        <h2>Jogo de aventura e plataforma 2D sobre conflitos no centro-oeste brasileiro, Entre as Estrelas é anunciado para o Switch</h2>
+                        <p>A produtora brasileira split studio anunciou que seu jogo de aventura e plataforma 2D Entre as Estrelas será lançado para o Nintendo Switch, PlayStation, Xbox e Windows</p>
+                        <div class="news-tags">
+                            <a href="#">Plataforma</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x200" alt="Notícia 10">
+                    <div class="news-content">
+                        <h2>Título da Notícia 10</h2>
+                        <p>Parágrafo introdutório da notícia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="news-tags">
+                            <a href="#">PC</a>
+                            <a href="#">Simulação</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x200" alt="Notícia 11">
+                    <div class="news-content">
+                        <h2>Título da Notícia 11</h2>
+                        <p>Parágrafo introdutório da notícia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="news-tags">
+                            <a href="#">Mobile</a>
+                            <a href="#">RPG</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x200" alt="Notícia 12">
+                    <div class="news-content">
+                        <h2>Título da Notícia 12</h2>
+                        <p>Parágrafo introdutório da notícia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="news-tags">
+                            <a href="#">Retro</a>
+                            <a href="#">Puzzle</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x200" alt="Notícia 13">
+                    <div class="news-content">
+                        <h2>Título da Notícia 13</h2>
+                        <p>Parágrafo introdutório da notícia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="news-tags">
+                            <a href="#">PlayStation</a>
+                            <a href="#">Survival</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x200" alt="Notícia 14">
+                    <div class="news-content">
+                        <h2>Título da Notícia 14</h2>
+                        <p>Parágrafo introdutório da notícia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="news-tags">
+                            <a href="#">Xbox</a>
+                            <a href="#">Mundo Aberto</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="news-item">
+                <a href="#">
+                    <img src="https://via.placeholder.com/400x200" alt="Notícia 15">
+                    <div class="news-content">
+                        <h2>Título da Notícia 15</h2>
+                        <p>Parágrafo introdutório da notícia. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <div class="news-tags">
+                            <a href="#">Nintendo</a>
+                            <a href="#">Aventura</a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <img src="Imagens\Mudar Tema icon.png" alt="Ícone de tema">
+        Mudar Tema
+    </button>
+
+    <footer>
+        <p>Feito por João Carvalho ~ 2024</p>
+    </footer>
+
+    <script>
+        function toggleTheme() {
+            document.body.classList.toggle('dark-theme');
+        }
+    </script>
+</body>
+</html>
